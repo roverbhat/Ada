@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #define x 10
 #define y 100
-void bubble(int choice){
+void bin(int choice){
     FILE *a;
     FILE *b;
     int i,j,count;
@@ -60,7 +60,7 @@ int main(){
         switch(choice){
             case  1:
             case  2:
-                bubble(choice);
+                bin(choice);
                 break;
             case 3:
                 lp=0;
