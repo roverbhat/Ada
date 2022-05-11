@@ -7,7 +7,7 @@ void bin(int choice){
     FILE *b;
     int i,j,count;
     int *arr;int key,low,mid,high;
-    for(i=x;i<y;i=i+10){
+    for(i=x;i<=y;i=i+10){
         if(choice==1){
         a=fopen("binput.txt","a");
         b=fopen("best.txt","a");
@@ -45,7 +45,7 @@ void bin(int choice){
                 low=mid+1;
             }
         }
-        fprintf(b,"%d\t%d\n",key,count);
+        fprintf(b,"%d\t%d\n",i,count);
         fclose(a);
         fclose(b);
     }    
@@ -59,7 +59,11 @@ int main(){
         scanf("%d",&choice);
         switch(choice){
             case  1:
+                 system("rm -r best.txt  binput.txt");
+                 bin(choice);
+                 break;
             case  2:
+                system("rm -r worst.txt inputwoprst.txt");
                 bin(choice);
                 break;
             case 3:
