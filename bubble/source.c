@@ -7,7 +7,7 @@ void bubble(int choice){
     FILE *b;
     int i,j,count;
     int *arr;int temp,c,d,flag=0;
-    for(i=x;i<y;i=i+10){
+    for(i=x;i<=y;i=i+10){
         if(choice==1){
         a=fopen("binput.txt","a");
         b=fopen("best.txt","a");
@@ -55,11 +55,15 @@ int main(){
         scanf("%d",&choice);
         switch(choice){
             case  1:
+                system("rm -r best.txt binput.txt");
+                bubble(choice);
+                break;
             case  2:
+                system("rm -r worst.txt inputwoprst.txt");
                 bubble(choice);
                 break;
             case 3:
                 lp=0;
         }
     }
-}
+}  

@@ -9,6 +9,7 @@ void selection(){
     srand(time(NULL));
     int count=0;
     int round=0,i,j;int temp,a,b,minind;
+    system("rm -r input.txt output.txt");
     for(i=x;i<=y;i=i+10){
         int *arr=(int *)malloc(sizeof(int)*i);
         input=fopen("input.txt","a");
