@@ -24,7 +24,7 @@ void bin(int choice){
         fprintf(a,"\n");
         count=0;low=0;high=i-1;
         if(choice==1){
-            key=arr[i-1]/2;
+            key=arr[(i-1)/2];
         }
         else{
             key=arr[0];

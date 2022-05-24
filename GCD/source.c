@@ -17,7 +17,7 @@ void gcd(int choice){
         for(int i=x;i<200;i=i+10){
             max=0;min=99999;
             for(int a=1;a<i;a++){
-                for(int b=1;b<i;b++){
+                for(int b=2;b<i;b++){
                     tm=a;
                     tn=b;
                     u=a;
