@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<time.h>
 #define x 10
 #define y 100
 void bubble(int choice){
@@ -13,21 +14,30 @@ void bubble(int choice){
         b=fopen("best.txt","a");
         }
         else if(choice==2){
-            a=fopen("inputwoprst.txt","a");
+            a=fopen("inputworst.txt","a");
             b=fopen("worst.txt","a");
         }
+        else{
+            a=fopen("inputavg.txt","a");
+            b=fopen("avg.txt","a");
+        }
         arr=(int*)malloc(i*sizeof(int));
-        temp=i;
+        temp=rand()%1000;
         for(j=0;j<i;j++){
-            if(choice==1)
-                arr[j]=temp--;
-            else
-                arr[j]=j+1;
+            if(choice==1){
+                arr[j]=temp-j;
+            }   
+            else if(choice==2)
+                arr[j]=j+temp;
+            else{
+                arr[j]=rand()%999;
+            }
             fprintf(a,"%d ",arr[j]);
         }
         fprintf(a,"\n");
         count=0;
-        for(c=0;c<i;c++){
+        for(c=0;c<i-1;c++){
+            flag=0;
             for(d=0;d<i-1-c;d++){
                 count++;
                 if(arr[d]<arr[d+1]){
@@ -49,21 +59,23 @@ void bubble(int choice){
 }
 int main(){
     int lp=1,choice;
+    system("rm -r *.txt");
+    srand(time(NULL));
     while(lp){
         printf("press 1 for best case \n");
         printf("enter 2 for worst case \n");
+        printf("Press 3 for avg case\n");
         scanf("%d",&choice);
         switch(choice){
-            case  1:
-                system("rm -r best.txt binput.txt");
-                bubble(choice);
-                break;
-            case  2:
-                system("rm -r worst.txt inputwoprst.txt");
-                bubble(choice);
-                break;
+            case 1:
+            case 2:
             case 3:
+                bubble(choice);
+                break;
+            case 4:
                 lp=0;
+                break;
+
         }
     }
 }  
