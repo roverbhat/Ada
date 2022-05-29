@@ -61,7 +61,9 @@ void searchpat(int choice)
 			for (i = 0; i < k; i++)
 			{
 				arr[i] = rand() % 2;
+				fprintf(inp,"%d\t",arr[i]);
 			}
+			fprintf(inp,"\n");
 			for (i = 0; i < 4; i++)
 			{
 				ptrn[i] = rand() % 2;
@@ -92,21 +94,17 @@ void searchpat(int choice)
 int main()
 {
 	int lp = 1, choice;
-	system("rm -r best.txt  ibest.txt  iworst.txt worst.txt iavg.txt avg.txt");
+	system("rm -r *.txt");
 	while (lp)
 	{
 		printf("ENter 1 for best case\n");
 		printf("Enter 2 for worst case \n");
+		printf("press 3 for avg case\n");
 		scanf("%d", &choice);
-		printf("%d choice ", choice);
 		switch (choice)
 		{
 		case 1:
-			searchpat(choice);
-			break;
 		case 2:
-			searchpat(choice);
-			break;
 		case 3:
 			searchpat(choice);
 			break;

@@ -1,4 +1,4 @@
-set title 'binary'
+set title 'bubble sort'
 set xrange[10:100]
 set yrange[0:5000]
 set xlabel 'inputsize'
