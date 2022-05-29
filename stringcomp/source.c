@@ -11,7 +11,7 @@ void searchpat(int choice)
 	FILE *inp;
 	FILE *out;
 	int count = 0, itr = 0;
-	int ptrn[4];
+	int ptrn[54];
 	srand(time(NULL));
 	for (k = x; k <= y; k = k + 100)
 	{
@@ -42,18 +42,18 @@ void searchpat(int choice)
 			fprintf(inp, "%d\t", arr[k - 1]);
 			if (choice == 1)
 			{
-				for (i = 0; i < 4; i++)
+				for (i = 0; i < 54; i++)
 				{
 					ptrn[i] = arr[i];
 				}
 			}
 			else
 			{
-				for (i = 0; i < 3; i++)
+				for (i = 0; i < 53; i++)
 				{
 					ptrn[i] = 1;
 				}
-				ptrn[3] = 0;
+				ptrn[53] = 0;
 			}
 		}
 		else
@@ -64,15 +64,15 @@ void searchpat(int choice)
 				fprintf(inp,"%d\t",arr[i]);
 			}
 			fprintf(inp,"\n");
-			for (i = 0; i < 4; i++)
+			for (i = 0; i < 54; i++)
 			{
 				ptrn[i] = rand() % 2;
 			}
 		}
 		count = 0;
-		for (i = 0; i < k - 4 + 1; i++)
+		for (i = 0; i < k - 54 + 1; i++)
 		{
-			for (j = 0; j < 4; j++)
+			for (j = 0; j < 54; j++)
 			{
 				count++;
 				if (ptrn[j] != arr[i + j])
@@ -80,7 +80,7 @@ void searchpat(int choice)
 					break;
 				}
 			}
-			if (j == 4)
+			if (j == 54)
 			{
 				fprintf(inp, "\nfound pattern \n");
 				break;
