@@ -4,21 +4,22 @@
 #define x 10
 #define y 100
 int main(){
-    int v=5;
+    int v;
+    system("rm -r *.txt");
+    printf("enter the variable name \n");
+    scanf("%d",&v);
     FILE *a;
     FILE *b;
     srand(time(NULL));
     int i,j,pow,itr=0,sum,count=0;
-    printf("hi");
     for(i=x;i<=y;i=i+10){
         int *arr;
         arr=malloc(i*sizeof(int));
         a=fopen("input.txt","a");
-        b=fopen("out[ut.txt","a");
+        b=fopen("output.txt","a");
         fprintf(a,"iteration no %d--",++itr);
-        printf("hi");
         for(j=0;j<i;j++){
-            arr[i]=rand()%1000;
+            arr[j]=rand()%1000;
         }
         fprintf(a,"\n");
         //stored the data in descendinng power of x
