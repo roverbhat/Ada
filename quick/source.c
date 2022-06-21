@@ -11,13 +11,15 @@ int hover(int arr[],int low,int high){
 	int i=low+1,j=high;
 	int temp;
 	while(i<j){
+		count++;
 		while(i<=high && arr[i]<pivot){
+			count++;
 			i++;
-			count++;
 		}
+		count++;
 		while(arr[j]>pivot){
-			j--;
 			count++;
+			j--;
 		}
 		if(i!=j){
 		temp=arr[i];
@@ -52,7 +54,7 @@ void driver(int choice){
 		a=fopen("iworst.txt","a");
 		b=fopen("worst.txt","a");
 	}
-	else{
+	else if(choice==3){
 		a=fopen("iavg.txt","a");
 		b=fopen("avg.txt","a");
 	}
@@ -74,14 +76,15 @@ void driver(int choice){
 		}
         else{
             	for(j=0;j<i;j++){
-				arr[j]=rand()%100;
-				fprintf(a,"%d \t",arr[j]);
-			}
+					arr[j]=rand()%100;
+					fprintf(a,"%d \t",arr[j]);
+				}
 			fprintf(a,"\n");
         }
 		count=0;
 		quicksort(arr,0,i-1);
 		fprintf(b,"%d\t%d\n",i,count);
+		free(arr);
 	}
 	fclose(a);
 	fclose(b);
