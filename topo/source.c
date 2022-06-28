@@ -52,7 +52,6 @@ void dfsmain(){
             }
         }
             for(int i=1;i<n;i++){
-                arr[i][i-1]=1;
                 arr[i-1][i]=1;
             }
         int vis[n];
